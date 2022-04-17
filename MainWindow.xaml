@@ -1,0 +1,73 @@
+﻿<Window x:Class="PhasmoCompanion.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhasmoCompanion"
+        mc:Ignorable="d"
+        Title="Phasmo Comp" Height="900" Width="1500" WindowStyle="ThreeDBorderWindow" SnapsToDevicePixels="True" UseLayoutRounding="True" Grid.IsSharedSizeScope="True" SizeToContent="Manual" ResizeMode="CanResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" Icon="/phasmophobia_2000x1270.jpg">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="499*"/>
+            <ColumnDefinition Width="499*"/>
+            <ColumnDefinition Width="503*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="573*"/>
+            <RowDefinition Height="117*"/>
+        </Grid.RowDefinitions>
+        <Image Stretch="Fill" Grid.RowSpan="2" Grid.IsSharedSizeScope="True" UseLayoutRounding="True" ClipToBounds="True" Grid.ColumnSpan="4" Margin="0,0,0,-3" Grid.Row="4" Source="/phasmophobia_2000x1270.jpg"/>
+        <ComboBox x:Name="evidenceone" Grid.IsSharedSizeScope="True" UseLayoutRounding="True" ClipToBounds="True" SnapsToDevicePixels="True" Grid.RowSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="UltraBold" FontSize="16" SelectionChanged="evidenceone_SelectionChanged" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto">
+            <ComboBoxItem Content="Freezing Temps."/>
+            <ComboBoxItem Content="Fingerprints"/>
+            <ComboBoxItem Content="Ghostwriting"/>
+            <ComboBoxItem Content="Ghost Orb"/>
+            <ComboBoxItem Content="Spiritbox"/>
+            <ComboBoxItem Content="D.O.T.S. Projector"/>
+            <ComboBoxItem Content="EMF Level 5"/>
+            <ComboBoxItem Content="None" IsSelected="True"/>
+        </ComboBox>
+        <ComboBox x:Name="evidencetwo" Grid.IsSharedSizeScope="True" UseLayoutRounding="True" ClipToBounds="True" SnapsToDevicePixels="True" Grid.RowSpan="2" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="UltraBold" FontSize="16" SelectionChanged="evidence2_SelectionChanged" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto">
+            <ComboBoxItem Content="Freezing Temps."/>
+            <ComboBoxItem Content="Fingerprints"/>
+            <ComboBoxItem Content="Ghostwriting"/>
+            <ComboBoxItem Content="Ghost Orb"/>
+            <ComboBoxItem Content="Spiritbox"/>
+            <ComboBoxItem Content="D.O.T.S. Projector"/>
+            <ComboBoxItem Content="EMF Level 5"/>
+            <ComboBoxItem Content="None" IsSelected="True"/>
+        </ComboBox>
+        <ComboBox x:Name="evidencethree" Grid.IsSharedSizeScope="True" UseLayoutRounding="True" ClipToBounds="True" SnapsToDevicePixels="True" Grid.RowSpan="2" Grid.Column="3" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="UltraBold" FontSize="16" SelectionChanged="evidencethree_SelectionChanged" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto">
+            <ComboBoxItem Content="Freezing Temps."/>
+            <ComboBoxItem Content="Fingerprints"/>
+            <ComboBoxItem Content="Ghostwriting"/>
+            <ComboBoxItem Content="Ghost Orb"/>
+            <ComboBoxItem Content="Spiritbox"/>
+            <ComboBoxItem Content="D.O.T.S. Projector"/>
+            <ComboBoxItem Content="EMF Level 5"/>
+            <ComboBoxItem Content="None" IsSelected="True"/>
+        </ComboBox>
+        <Label Content="Evidence 1" Grid.Row="2" Foreground="White" UseLayoutRounding="True" Grid.IsSharedSizeScope="True" ClipToBounds="True" HorizontalContentAlignment="Center" FontWeight="UltraBold" FontSize="14" Background="#FF585858" VerticalContentAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto"/>
+        <Label Content="Evidence 2" Grid.Row="2" Foreground="White" UseLayoutRounding="True" Grid.IsSharedSizeScope="True" ClipToBounds="True" HorizontalContentAlignment="Center" FontWeight="UltraBold" FontSize="14" Background="#FF585858" Grid.Column="2" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
+        <Label Content="Evidence 3" Grid.Row="2" Foreground="White" UseLayoutRounding="True" Grid.IsSharedSizeScope="True" ClipToBounds="True" HorizontalContentAlignment="Center" FontWeight="UltraBold" FontSize="14" Grid.Column="3" Background="#FF585858" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
+        <Button x:Name="checkghost" Grid.Column="2" Content="Check Ghost Type" Grid.Row="5" IsDefault="True" VerticalContentAlignment="Center" Foreground="White" FontWeight="UltraBold" FontSize="16" UseLayoutRounding="True" ClipToBounds="True" Grid.IsSharedSizeScope="True" Click="checkghost_Click" AutomationProperties.IsRequiredForForm="True" HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="singular" Content="Possible ghost:" Grid.Row="3" Foreground="White" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FF585858" FontWeight="UltraBold" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Label x:Name="ghostname" Content="None" Grid.Row="3" Foreground="White" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FF585858" FontWeight="UltraBold" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Label x:Name="bgstrong" Content="" Grid.Row="5" Foreground="White" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="UltraBold" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Background="#FF585858"/>
+        <Label x:Name="bgweak" Content="" Grid.Row="5" Foreground="White" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FF585858" FontWeight="UltraBold" Grid.Column="3" Height="Auto" Width="Auto"/>
+        <Label x:Name="weaklabel" Content="Weakness:" Grid.Row="5" Foreground="#FF3AF115" FontSize="16" FontWeight="UltraBold" Grid.Column="3" Height="Auto" Width="Auto" HorizontalContentAlignment="Center" ClipToBounds="True" Grid.IsSharedSizeScope="True" UseLayoutRounding="True"/>
+        <Label x:Name="weakness" Content="Not Applicable" Grid.Row="5" Foreground="White" FontSize="16" FontWeight="UltraBold" Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.IsSharedSizeScope="True" UseLayoutRounding="True" ClipToBounds="True" FontStretch="Normal" HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto"/>
+        <Label x:Name="strength" Content="Not Applicable" Grid.Row="5" Foreground="White" FontSize="16" FontWeight="UltraBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.IsSharedSizeScope="True" UseLayoutRounding="True" ClipToBounds="True" FontStretch="Normal" Height="Auto" Width="Auto" Margin="0,3,1,-3" Grid.Column="1"/>
+        <Label x:Name="stronglabel" Content="Strength:" Grid.Row="5" Foreground="#FFDC2020" FontSize="16" FontWeight="UltraBold" Grid.Column="1" Height="Auto" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Grid.IsSharedSizeScope="True" UseLayoutRounding="True" ClipToBounds="True"/>
+        <Button x:Name="resetvalues" Grid.Column="2" Content="Reset All" Grid.Row="3" Height="Auto" Width="Auto" Background="#FFE61818" Foreground="White" FontSize="16" FontWeight="UltraBold" Click="resetvalues_Click" IsCancel="True"/>
+    </Grid>
+</Window>
